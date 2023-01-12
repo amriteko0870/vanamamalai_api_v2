@@ -1,4 +1,5 @@
 from django.db import models
+import apiApp.landing_page.landing_page_models
 
 # Create your models here.
 

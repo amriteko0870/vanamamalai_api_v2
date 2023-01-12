@@ -8,11 +8,18 @@ import apiApp.views as views
 import apiApp.user_views as u_views
 import apiApp.sidebar_views as s_views
 import apiApp.admin_pages.admin_views as admin_views
+import apiApp.landing_page.landing_page_views as ladning_views
+import apiApp.landing_page.landing_page_admin_views as ladning_admin_views
+
 
 urlpatterns = [
     #-------------------Filters------------------------------------
     path('sideBar',s_views.sideBar,name='sideBar'),
     path('sideBarAdmin',s_views.sideBarAdmin,name='sideBarAdmin'),
+
+    
+    path('landing_page',ladning_views.landing_page,name='landing_page'),
+
 
 
     path('landingPage',views.landingPage,name='landingPage'),
@@ -30,7 +37,10 @@ urlpatterns = [
     
     
     path('adminDashboard',admin_views.adminDashboard,name='adminDashboard'),
-    path('home_page',admin_views.home_page,name='home_page'),
+    
+    # path('home_page',admin_views.home_page,name='home_page'),
+    path('home_page',ladning_admin_views.home_page,name='home_page'),
+    
     path('addSectionLandingPage',admin_views.addSectionLandingPage,name='addSectionLandingPage'),
     path('vn_temple_edit',admin_views.vn_temple_edit,name='vn_temple_edit'),
     path('other_temple_edit',admin_views.other_temple_edit,name='other_temple_edit'),
