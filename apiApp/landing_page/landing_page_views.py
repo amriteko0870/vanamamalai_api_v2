@@ -96,25 +96,25 @@ def landing_page(request,format=None):
             jeeyar_list['jeeyars'] = list(jeeyar)[::-1][:10]
             res.append(jeeyar_list)
 
-        if i['section_layout'] == 'small_banner':
-            small_banner_res = {}
-            small_banner_obj = small_banner.objects.filter(section_id = i['id']).values().last()
-            small_banner_res['id'] = i['id']
-            small_banner_res['layout'] = 'small_banner'
+        # if i['section_layout'] == 'small_banner':
+        #     small_banner_res = {}
+        #     small_banner_obj = small_banner.objects.filter(section_id = i['id']).values().last()
+        #     small_banner_res['id'] = i['id']
+        #     small_banner_res['layout'] = 'small_banner'
 
-            small_banner_res['image'] = small_banner_obj['image']
-            small_banner_res['h1'] = small_banner_obj['h1']
-            small_banner_res['p'] = small_banner_obj['p']
-            res.append(small_banner_res)
+        #     small_banner_res['image'] = small_banner_obj['image']
+        #     small_banner_res['h1'] = small_banner_obj['h1']
+        #     small_banner_res['p'] = small_banner_obj['p']
+        #     res.append(small_banner_res)
 
-        if i['section_layout'] == 'card_section':
-            card_section_res = {}
-            card_section_obj = card_section.objects.filter(section_id = i['id'])
-            card_section_res['id'] = i['id']
-            card_section_res['layout'] = 'cards'
-            card_data = card_section_obj.values('h1','p')
-            card_section_res['card_data'] = card_data
-            res.append(card_section_res)    
+        # if i['section_layout'] == 'card_section':
+        #     card_section_res = {}
+        #     card_section_obj = card_section.objects.filter(section_id = i['id'])
+        #     card_section_res['id'] = i['id']
+        #     card_section_res['layout'] = 'cards'
+        #     card_data = card_section_obj.values('h1','p')
+        #     card_section_res['card_data'] = card_data
+        #     res.append(card_section_res)    
     res = {
             'status':True,
             'data':res
