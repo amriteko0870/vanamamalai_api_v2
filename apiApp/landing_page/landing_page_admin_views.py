@@ -103,13 +103,12 @@ def home_page(request,format=None):
                                                                 {
                                                                     'id': 'bcd'+str(c),
                                                                     'title': "Heading",
-                                                                    'content': "21st Paasuram",
+                                                                    'content': j['h1'],
                                                                 },
                                                                 {
                                                                     'id': 'bcd'+str(c+1),
                                                                     'title': "Brief Info",
-                                                                    'content':
-                                                                    "Vanamamalai mutt",
+                                                                    'content':j['p'],
                                                                 },
                                                             ],
                                                 'status':True

@@ -45,7 +45,8 @@ def sideBar(request,format=None):
             "main_link": {
                         "link_name": "Home",
                         "link_path": "/home",
-                        "link_code":'home'
+                        "link_code":'home',
+                        "icon":'media/img/sidebar_home.svg'
                        },
            }
     navbar.append(home)
@@ -53,7 +54,8 @@ def sideBar(request,format=None):
         vn_temple = {
                     "main_link":{
                                 "link_name": "Vanamamalai Temple",
-                                "link_code": "vn_temple"
+                                "link_code": "vn_temple",
+                                "icon":'media/img/sidebar_temple.svg'
                                 },
                     }
         vn_sub_links = vanamamalai_temple.objects.filter(show_status = True)\
@@ -73,7 +75,8 @@ def sideBar(request,format=None):
         vn_other_temple = {
                     "main_link":{
                                 "link_name": "Other Temple",
-                                "link_code": "other_temple"
+                                "link_code": "other_temple",
+                                "icon":'media/img/sidebar_other_temple.svg'
 
                                 },
                         }
@@ -92,7 +95,8 @@ def sideBar(request,format=None):
         vn_branches = {
                     "main_link":{
                                 "link_name": "Branches",
-                                "link_code": "branches"
+                                "link_code": "branches",
+                                "icon":'media/img/sidebar_branches.svg'
                                 },
                     }
         vn_sub_links = vanamamalai_mutt_branches.objects.filter(show_status = True).annotate(
@@ -111,7 +115,8 @@ def sideBar(request,format=None):
                         "main_link": {
                                         "link_name": "Ponnadikkal Jeeyar",
                                         "link_path": "/sub_page/ponnadikkal_jeeyar/1",
-                                        "link_code": "ponnadikkal_jeeyar"
+                                        "link_code": "ponnadikkal_jeeyar",
+                                        "icon":'media/img/sidebar_ponadikal_jeeyar.svg'
 
                                     },
                     }
@@ -123,7 +128,8 @@ def sideBar(request,format=None):
                     'main_link': {
                                 'link_name': "Jeeyars",
                                 'link_path': "/jeeyars",
-                                "link_code": "/jeeyars"
+                                "link_code": "/jeeyars",
+                                "icon":'media/img/sidebar_jeeyars.svg'
 
                                 }
                 }
@@ -134,7 +140,8 @@ def sideBar(request,format=None):
         vn_edu = {
                     "main_link":{
                                 "link_name": "Education",
-                                "link_code": "vn_education"
+                                "link_code": "vn_education",
+                                "icon":'media/img/sidebar_education.svg'
                                 
                                 },
                     }
@@ -154,7 +161,8 @@ def sideBar(request,format=None):
                     'main_link': {
                                 'link_name': "Gallery",
                                 'link_path': "/gallery",
-                                "link_code": "/gallery"
+                                "link_code": "/gallery",
+                                "icon":'media/img/sidebar_gallery.svg'
                                 }
                 }
         navbar.append(gallery)
@@ -173,7 +181,8 @@ def sideBarAdmin(request,format=None):
             "main_link": {
                         "link_name": "Dashboard",
                         "link_path": "/admin/dashboard",
-                        "link_code":'/admin/dashboard'
+                        "link_code":'/admin/dashboard',
+                        "icon":'media/img/sidebar_home.svg'
                        },
            }
     navbar.append(dashboard)
@@ -183,7 +192,8 @@ def sideBarAdmin(request,format=None):
             "main_link": {
                         "link_name": "Home",
                         "link_path": "/admin/home_edit",
-                        "link_code":'/admin/home_edit'
+                        "link_code":'/admin/home_edit',
+                        "icon":'media/img/sidebar_home.svg'
                        },
            }
     navbar.append(home)
@@ -193,7 +203,8 @@ def sideBarAdmin(request,format=None):
                  "main_link":{
                               "link_name": "Vanamamalai Temple",
                               "link_code": "vn_temple_edit",
-                              "link_path": "/admin/sub_admin_page/vn_temple_edit/"
+                              "link_path": "/admin/sub_admin_page/vn_temple_edit/",
+                              "icon":'media/img/sidebar_temple.svg'
                              },
                 }
     vn_sub_links = vanamamalai_temple.objects.annotate(
@@ -212,7 +223,8 @@ def sideBarAdmin(request,format=None):
                  "main_link":{
                               "link_name": "Other Temple",
                               "link_code": "other_temple_edit",
-                              "link_path": "/admin/sub_admin_page/other_temple_edit/"
+                              "link_path": "/admin/sub_admin_page/other_temple_edit/",
+                              "icon":'media/img/sidebar_other_temple.svg'
                              },
                 }
     vn_sub_links = vanamamalai_other_temple.objects.annotate(
@@ -230,7 +242,8 @@ def sideBarAdmin(request,format=None):
                  "main_link":{
                               "link_name": "Branches",
                               "link_code": "branches_edit",
-                              "link_path": "/admin/sub_admin_page/branches_edit/"
+                              "link_path": "/admin/sub_admin_page/branches_edit/",
+                              "icon":'media/img/sidebar_branches.svg'
                              },
                 }
     vn_sub_links = vanamamalai_mutt_branches.objects.annotate(
@@ -250,7 +263,8 @@ def sideBarAdmin(request,format=None):
                     "main_link": {
                                     "link_name": "Ponnadikkal Jeeyar",
                                     "link_path": "admin/sub_admin_page/ponnadikkal_jeeyar_edit/"+id,
-                                    "link_code": "ponnadikkal_jeeyar_edit"
+                                    "link_code": "ponnadikkal_jeeyar_edit",
+                                    "icon":'media/img/sidebar_ponadikal_jeeyar.svg'
 
                                  },
                  }
@@ -261,7 +275,8 @@ def sideBarAdmin(request,format=None):
                 'main_link': {
                             'link_name': "Jeeyars",
                             'link_path': "admin/sub_admin_page/jeeyars_edit",
-                            "link_code": "/jeeyars_edit"
+                            "link_code": "/jeeyars_edit",
+                            "icon":'media/img/sidebar_jeeyars.svg'
 
                             }
               }
@@ -272,7 +287,8 @@ def sideBarAdmin(request,format=None):
                  "main_link":{
                               "link_name": "Education",
                               "link_code": "vn_education_edit",
-                              "link_path": "/admin/sub_admin_page/vn_education_edit/"
+                              "link_path": "/admin/sub_admin_page/vn_education_edit/",
+                              "icon":'media/img/sidebar_education.svg'
                              },
                 }
     vn_sub_links = vanamamalai_education.objects.annotate(
@@ -290,7 +306,9 @@ def sideBarAdmin(request,format=None):
                 'main_link': {
                             'link_name': "Gallery",
                             'link_path': "admin/sub_admin_page/gallery_edit",
-                            "link_code": "/gallery_edit"
+                            "link_code": "/gallery_edit",
+                            "icon":'media/img/sidebar_gallery.svg'
+
                             }
               }
     navbar.append(gallery)

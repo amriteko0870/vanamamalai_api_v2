@@ -26,6 +26,7 @@ from rest_framework.response import Response
 
 #--------------------------- models -----------------------------------------------------
 from apiApp.models import gallery_youtube
+from apiApp.models import jeeyars
 from apiApp.landing_page.landing_page_models import landing_page_flow
 from apiApp.landing_page.landing_page_models import hero_section
 from apiApp.landing_page.landing_page_models import banner_section
@@ -43,12 +44,13 @@ def landing_page(request,format=None):
     for i in landing_obj:
         if i['section_layout'] == 'hero_section':
             hero_res = {}
-            hero_obj = hero_section.objects.values().last()
+            hero_obj = hero_section.objects.values()
             hero_res['id'] = i['id']
             hero_res['layout'] = 'hero'
-            hero_res['h1'] = hero_obj['h1']
-            hero_res['h2'] = hero_obj['h2']
-            hero_res['img'] = hero_obj['img']
+            # hero_res['h1'] = hero_obj['h1']
+            # hero_res['h2'] = hero_obj['h2']
+            # hero_res['img'] = hero_obj['img']
+            hero_res['hero_data'] = hero_obj
             res.append(hero_res)
         
 
@@ -85,6 +87,15 @@ def landing_page(request,format=None):
             facebook_res['fb_page_link'] = facebook_obj['link']
             res.append(facebook_res)
             
+        if i['section_layout'] == 'jeeyar_list':
+            jeeyar_list = {}
+            jeeyar_list['id'] = i['id']
+            jeeyar_list['call_link'] = "jeeyars_details"
+            jeeyar_list['layout'] = "jeeyars"
+            jeeyar = jeeyars.objects.filter(show_status = True).values('id','image','name','prefix','start_date','end_date','jeeyar_no','jeeyar_no_suffix')
+            jeeyar_list['jeeyars'] = list(jeeyar)[::-1][:10]
+            res.append(jeeyar_list)
+
         if i['section_layout'] == 'small_banner':
             small_banner_res = {}
             small_banner_obj = small_banner.objects.filter(section_id = i['id']).values().last()
