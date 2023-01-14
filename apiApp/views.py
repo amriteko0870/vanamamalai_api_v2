@@ -100,7 +100,7 @@ def gallery_page(request,format=None):
                                             video_title = F('title'),
                                             video_id = F('url')
                                           ).values('video_title','video_id')
-    res['carousel_data'] = obj
+    res['carousel_data'] = list(obj)[::-1]
 
     content = []
     albums = gallery_album.objects.filter(show_status = True).values_list('album_name','id')
@@ -191,7 +191,6 @@ def jeeyars_details(request,format=None):
     res = {}
     obj = jeeyars.objects.filter(id = id).values().last()
     tab = jeeyars_tab.objects.filter(jeeyar_id = id,show_status = True).values()
-
     banner = {
                 'heading': obj['banner_heading'],
                 'image': obj['banner_image'],

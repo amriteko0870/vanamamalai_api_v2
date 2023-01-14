@@ -17,11 +17,10 @@ urlpatterns = [
     path('sideBar',s_views.sideBar,name='sideBar'),
     path('sideBarAdmin',s_views.sideBarAdmin,name='sideBarAdmin'),
 
-    
+
+
+    path('suscribeStore',ladning_views.suscribeStore,name='suscribeStore'),
     path('landing_page',ladning_views.landing_page,name='landing_page'),
-
-
-
     path('landingPage',views.landingPage,name='landingPage'),
     path('vn_temple',views.vn_temple,name='vn_temple'),
     path('gallery_page',views.gallery_page,name='gallery_page'),
@@ -40,6 +39,9 @@ urlpatterns = [
     
     # path('home_page',admin_views.home_page,name='home_page'),
     path('home_page',ladning_admin_views.home_page,name='home_page'),
+    path('hero_section_admin',ladning_admin_views.hero_section_admin,name='hero_section_admin'),
+    path('bannerTypeChange',ladning_admin_views.bannerTypeChange,name='bannerTypeChange'),
+
     
     path('addSectionLandingPage',admin_views.addSectionLandingPage,name='addSectionLandingPage'),
     path('vn_temple_edit',admin_views.vn_temple_edit,name='vn_temple_edit'),

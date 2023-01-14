@@ -37,3 +37,9 @@ class card_section(models.Model): # layout 6
     h1 = models.TextField(blank=True)
     p = models.TextField(blank=True)
     section_id = models.TextField(blank=True)
+
+class suscribeModel(models.Model):
+    first_name = models.TextField(blank=True)
+    last_name = models.TextField(blank=True)
+    phone_no = models.TextField(blank=True)
+    email = models.TextField(blank=True)

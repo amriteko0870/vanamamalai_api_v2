@@ -33,13 +33,14 @@ from apiApp.landing_page.landing_page_models import banner_section
 from apiApp.landing_page.landing_page_models import facebook_section
 from apiApp.landing_page.landing_page_models import small_banner
 from apiApp.landing_page.landing_page_models import card_section
+from apiApp.landing_page.landing_page_models import suscribeModel
 
 
 #------------------------start you views----------------------------------------------
 
 @api_view(['GET'])
 def landing_page(request,format=None):
-    landing_obj = landing_page_flow.objects.values()
+    landing_obj = landing_page_flow.objects.filter(show_status = True).values()
     res = []
     for i in landing_obj:
         if i['section_layout'] == 'hero_section':
@@ -50,7 +51,7 @@ def landing_page(request,format=None):
             # hero_res['h1'] = hero_obj['h1']
             # hero_res['h2'] = hero_obj['h2']
             # hero_res['img'] = hero_obj['img']
-            hero_res['hero_data'] = hero_obj
+            hero_res['hero_data'] = list(hero_obj)[::-1]
             res.append(hero_res)
         
 
@@ -59,7 +60,7 @@ def landing_page(request,format=None):
             youtube_obj = gallery_youtube.objects.annotate(yt_link = F('url'),yt_title = F('title')).values('yt_link','yt_title')
             youtube_res['id'] = i['id']
             youtube_res['layout'] = 'youtube_events'
-            youtube_res['caraousel_data'] = youtube_obj
+            youtube_res['caraousel_data'] = list(youtube_obj)[::-1]
             res.append(youtube_res)
 
         if i['section_layout'] == 'banner_section':
@@ -96,27 +97,48 @@ def landing_page(request,format=None):
             jeeyar_list['jeeyars'] = list(jeeyar)[::-1][:10]
             res.append(jeeyar_list)
 
-        # if i['section_layout'] == 'small_banner':
-        #     small_banner_res = {}
-        #     small_banner_obj = small_banner.objects.filter(section_id = i['id']).values().last()
-        #     small_banner_res['id'] = i['id']
-        #     small_banner_res['layout'] = 'small_banner'
+        if i['section_layout'] == 'small_banner':
+            small_banner_res = {}
+            small_banner_obj = small_banner.objects.filter(section_id = i['id']).values().last()
+            small_banner_res['id'] = i['id']
+            small_banner_res['layout'] = 'small_banner'
 
-        #     small_banner_res['image'] = small_banner_obj['image']
-        #     small_banner_res['h1'] = small_banner_obj['h1']
-        #     small_banner_res['p'] = small_banner_obj['p']
-        #     res.append(small_banner_res)
+            small_banner_res['image'] = small_banner_obj['image']
+            small_banner_res['h1'] = small_banner_obj['h1']
+            small_banner_res['p'] = small_banner_obj['p']
+            res.append(small_banner_res)
 
-        # if i['section_layout'] == 'card_section':
-        #     card_section_res = {}
-        #     card_section_obj = card_section.objects.filter(section_id = i['id'])
-        #     card_section_res['id'] = i['id']
-        #     card_section_res['layout'] = 'cards'
-        #     card_data = card_section_obj.values('h1','p')
-        #     card_section_res['card_data'] = card_data
-        #     res.append(card_section_res)    
+        if i['section_layout'] == 'card_section':
+            card_section_res = {}
+            card_section_obj = card_section.objects.filter(section_id = i['id'])
+            card_section_res['id'] = i['id']
+            card_section_res['layout'] = 'cards'
+            card_data = card_section_obj.values('h1','p')
+            card_section_res['card_data'] = card_data
+            res.append(card_section_res)    
     res = {
             'status':True,
             'data':res
           }
     return Response(res)
+
+
+
+@api_view(['POST'])
+def suscribeStore(request,format=None):
+    first_name = request.data['first_name']
+    last_name = request.data['last_name']
+    phone_no = request.data['phone_no']
+    email = request.data['email']
+
+    data = suscribeModel(
+                            first_name = first_name,
+                            last_name = last_name,
+                            phone_no = phone_no,
+                            email = email,
+                        )
+    data.save()
+    return Response({'status':True,'message':'Subscribed successfully'})
+
+    
+

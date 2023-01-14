@@ -1,63 +1,205 @@
 {
-  "pageName": "Vanamamalai Temple",
-  "subPageName": "TEMPLE HISTORY",
-  "heading": "TEMPLE HISTORY",
-  "subheading": "Lorem Ipsum",
-  "all_tabs": [
+  "pageName": "Home",
+  "all_sections": [
     {
-      "show_status": true,
-      "tab_name": "Details",
-      "tab_id": 1,
-      "tab_data": [
+      "section_name": "Section 1",
+      "layout": "hero_section",
+      "status": true,
+      "id": 1,
+      "section_data": [
         {
-          "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.",
-          "type": "text",
-          "id": "bf1"
-        },
-        { "data": "sss", "type": "text", "id": "bf5" },
-        {
-          "data": "media/img/bannertala_FoXYs1G.jpg",
+          "id": 4,
+          "content": "media/img/2.png",
           "type": "image",
-          "id": "bf6"
+          "section_data_status": true
+        },
+        {
+          "id": 2,
+          "content": "media/img/hero_2.png",
+          "type": "image",
+          "section_data_status": true
         }
       ]
     },
     {
-      "show_status": true,
-      "tab_name": "History",
-      "tab_id": 2,
-      "tab_data": [
+      "section_name": "Section 2",
+      "layout": "banner_section",
+      "status": true,
+      "id": 3,
+      "section_data": [
         {
-          "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium. e ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.",
-          "type": "text",
-          "id": "bf2"
+          "id": 1,
+          "type": "image",
+          "content": "media/img/26_EN.jpg",
+          "content_data": [
+            { "id": "bcd1", "title": "Heading", "content": "" },
+            { "id": "bcd2", "title": "Brief Info", "content": "" }
+          ],
+          "status": true
+        },
+        {
+          "id": 2,
+          "type": "image",
+          "content": "",
+          "content_data": [
+            { "id": "bcd3", "title": "Heading", "content": "21st paasuram" },
+            {
+              "id": "bcd4",
+              "title": "Brief Info",
+              "content": "Vanamamalai mutt is an ancient srivaishnava mutt which was established by ponnadikkal jiyar under the orders of manavala mamunigal. Ponnadikkal jiyar was the first and foremost disciple and this mutt is one of the most important mutts of srivaishnava sath sampradhayam."
+            }
+          ],
+          "status": true
+        },
+        {
+          "id": 3,
+          "type": "image",
+          "content": "media/img/26_EN.jpg",
+          "content_data": [
+            { "id": "bcd5", "title": "Heading", "content": "" },
+            { "id": "bcd6", "title": "Brief Info", "content": "" }
+          ],
+          "status": true
+        },
+        {
+          "id": 4,
+          "type": "image",
+          "content": "media/img/26_EN.jpg",
+          "content_data": [
+            { "id": "bcd7", "title": "Heading", "content": "" },
+            { "id": "bcd8", "title": "Brief Info", "content": "" }
+          ],
+          "status": true
         }
       ]
     },
     {
-      "show_status": true,
-      "tab_name": "Events",
-      "tab_id": 3,
-      "tab_data": [
+      "section_name": "Section 3",
+      "layout": "facebook_section",
+      "status": true,
+      "id": 4,
+      "section_data": [
         {
-          "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.",
+          "id": 1,
+          "title": "Facebook Page Link",
+          "content": "srivanamamalaimuttofficial",
           "type": "text",
-          "id": "bf3"
+          "section_data_status": true
         }
       ]
     },
     {
-      "show_status": true,
-      "tab_name": "How to Reach",
-      "tab_id": 4,
-      "tab_data": [
+      "section_name": "Section 4",
+      "layout": "small_banner",
+      "status": true,
+      "id": 8,
+      "section_data": [
         {
-          "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit",
+          "id": "sb1",
+          "title": "Heading",
+          "content": "Lorem Ipsum",
           "type": "text",
-          "id": "bf4"
+          "section_data_status": true
+        },
+        {
+          "id": "sb2",
+          "title": "Brief Info",
+          "content": "lorem ipsum dolor sit amet",
+          "type": "text",
+          "section_data_status": true
+        },
+        {
+          "id": "sb3",
+          "title": "Cover Image",
+          "content": "media/img/vm_temple_banner.png",
+          "type": "image",
+          "section_data_status": true
+        }
+      ]
+    },
+    {
+      "section_name": "Section 5",
+      "layout": "card_section",
+      "status": true,
+      "id": 9,
+      "section_data": [
+        {
+          "card_id": 1,
+          "card_data": [
+            {
+              "id": "cs1",
+              "title": "Heading",
+              "content": "SVNB Sabha AGM - 2011",
+              "type": "text",
+              "section_data_status": true
+            },
+            {
+              "id": "cs2",
+              "title": "Brief Info",
+              "content": "The Annual General body meeting of our sabha will be held on Sunday 12th June 2011 by 4.00 p.m. at our Sabha premises Triplicane, under the presidenship of Thiru A.G. Gopalan, President.",
+              "type": "text",
+              "section_data_status": true
+            }
+          ]
+        },
+        {
+          "card_id": 2,
+          "card_data": [
+            {
+              "id": "cs3",
+              "title": "Heading",
+              "content": "About Kshetram",
+              "type": "text",
+              "section_data_status": true
+            },
+            {
+              "id": "cs4",
+              "title": "Brief Info",
+              "content": "The word kshetram itself is a wonderful sanskrit word. In his divine bhagavat geetha, geethacharyan says edam sareeram kowthEyA kshetram ethyabhidheeyathE",
+              "type": "text",
+              "section_data_status": true
+            }
+          ]
+        },
+        {
+          "card_id": 3,
+          "card_data": [
+            {
+              "id": "cs5",
+              "title": "Heading",
+              "content": "SVNB SabhaAGM - 2011",
+              "type": "text",
+              "section_data_status": true
+            },
+            {
+              "id": "cs6",
+              "title": "Brief Info",
+              "content": "The Annual General body meeting of our sabha will be held on Sunday 12th June 2011 by 4.00 p.m. at our Sabha premises Triplicane, under the presidenship of Thiru A.G. Gopalan, President.",
+              "type": "text",
+              "section_data_status": true
+            }
+          ]
+        },
+        {
+          "card_id": 4,
+          "card_data": [
+            {
+              "id": "cs7",
+              "title": "Heading",
+              "content": "SVNB SabhaAGM - 2011",
+              "type": "text",
+              "section_data_status": true
+            },
+            {
+              "id": "cs8",
+              "title": "Brief Info",
+              "content": "The Annual General body meeting of our sabha will be held on Sunday 12th June 2011 by 4.00 p.m. at our Sabha premises Triplicane, under the presidenship of Thiru A.G. Gopalan, President.",
+              "type": "text",
+              "section_data_status": true
+            }
+          ]
         }
       ]
     }
-  ],
-  "new_id": 7
+  ]
 }
