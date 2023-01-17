@@ -7,7 +7,7 @@ from apiApp.models import vanamamalai_mutt_branches,vanamamalai_mutt_branches_ta
 from apiApp.models import vanamamalai_education,vanamamalai_education_tab
 from apiApp.models import rootPageStatus
 
-from apiApp.landing_page.landing_page_models import landing_page_flow,banner_section,facebook_section,small_banner,card_section,hero_section
+from apiApp.landing_page.landing_page_models import landing_page_flow,banner_section,facebook_section,small_banner,card_section,hero_section,suscribeModel
 
 # Register your models here.
 
@@ -34,3 +34,4 @@ admin.site.register(facebook_section)
 admin.site.register(small_banner)
 admin.site.register(card_section)
 admin.site.register(hero_section)
+admin.site.register(suscribeModel)

@@ -43,3 +43,6 @@ class suscribeModel(models.Model):
     last_name = models.TextField(blank=True)
     phone_no = models.TextField(blank=True)
     email = models.TextField(blank=True)
+    city = models.TextField(blank=True)
+    state = models.TextField(blank=True)
+    country = models.TextField(blank=True)

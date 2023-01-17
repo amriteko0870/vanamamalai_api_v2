@@ -116,6 +116,7 @@ def landing_page(request,format=None):
             card_data = card_section_obj.values('h1','p')
             card_section_res['card_data'] = card_data
             res.append(card_section_res)    
+    
     res = {
             'status':True,
             'data':res
@@ -130,12 +131,19 @@ def suscribeStore(request,format=None):
     last_name = request.data['last_name']
     phone_no = request.data['phone_no']
     email = request.data['email']
+    city  = request.data['city']
+    state = request.data['state']
+    country = request.data['country']
+
 
     data = suscribeModel(
                             first_name = first_name,
                             last_name = last_name,
                             phone_no = phone_no,
                             email = email,
+                            city = city,
+                            state = state,
+                            country = country
                         )
     data.save()
     return Response({'status':True,'message':'Subscribed successfully'})
