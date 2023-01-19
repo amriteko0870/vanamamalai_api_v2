@@ -11,6 +11,8 @@ import apiApp.admin_pages.admin_views as admin_views
 import apiApp.landing_page.landing_page_views as ladning_views
 import apiApp.landing_page.landing_page_admin_views as ladning_admin_views
 
+import apiApp.landing_page.locations as locations_views
+
 
 urlpatterns = [
     #-------------------Filters------------------------------------
@@ -34,6 +36,10 @@ urlpatterns = [
     path('jeeyars_details',views.jeeyars_details,name='jeeyars_details'),
     path('vn_education',views.vn_education,name='vn_education'),
     
+    path('countriesAll',locations_views.countriesAll,name='countriesAll'),
+    path('stateOfCountry',locations_views.stateOfCountry,name='stateOfCountry'),
+    path('cityOfCountryState',locations_views.cityOfCountryState,name='cityOfCountryState'),
+
     
     path('adminDashboard',admin_views.adminDashboard,name='adminDashboard'),
     
