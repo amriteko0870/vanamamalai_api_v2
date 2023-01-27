@@ -963,7 +963,7 @@ def vn_education_edit(request,format=None):
          sub_page_list = obj.annotate(
                                           subpage_name = Lower(F('content_title')),
                                           subpage_link = Concat(
-                                                                  V('/admin/sub_admin_page/branches_edit/'),
+                                                                  V('/admin/sub_admin_page/vn_education_edit/'),
                                                                   Cast('id',CharField()),
                                                                   output_field=CharField()
                                                                )
