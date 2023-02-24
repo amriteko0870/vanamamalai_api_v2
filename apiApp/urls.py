@@ -22,6 +22,7 @@ urlpatterns = [
 
 
     path('suscribeStore',ladning_views.suscribeStore,name='suscribeStore'),
+    path('shishyasEnrollment',ladning_views.shishyasEnrollment,name='shishyasEnrollment'),
     path('landing_page',ladning_views.landing_page,name='landing_page'),
     path('landingPage',views.landingPage,name='landingPage'),
     path('vn_temple',views.vn_temple,name='vn_temple'),

@@ -34,6 +34,7 @@ from apiApp.landing_page.landing_page_models import facebook_section
 from apiApp.landing_page.landing_page_models import small_banner
 from apiApp.landing_page.landing_page_models import card_section
 from apiApp.landing_page.landing_page_models import suscribeModel
+from apiApp.landing_page.landing_page_models import shishyaForm
 
 
 #------------------------start you views----------------------------------------------
@@ -149,4 +150,21 @@ def suscribeStore(request,format=None):
     return Response({'status':True,'message':'Subscribed successfully'})
 
     
+@api_view(['POST'])
+def shishyasEnrollment(request):
+    data = request.data
+    questions_content = data['questions_content']
+    for i in questions_content:
+        if i['required']:
+            if i['answer'] == "":
+                res = {'status':False,'message':'{} field is required'.format(i['heading'])}
+                return Response(res)
+    data = shishyaForm(data = str(questions_content))
+    data.save()
+    res = {
+            'status':True,
+            'message':"Form submitted"
+        }
+    
+    return Response(res)
 

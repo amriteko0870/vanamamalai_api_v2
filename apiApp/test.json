@@ -1,205 +1,175 @@
 {
-  "pageName": "Home",
-  "all_sections": [
+  "instruction": {
+    "heading": "Sri Vanamamalai/Thothadri Mutt - Sishyas/Volunteers Register",
+    "paragraph": "As per the wish of our current pontiff Srimath paramahamsEthyAdhi Madhurakavi VAnamAmalai RAmAnuja JIyar SwAmy, we are building a database of our Mutt Sishyas.",
+    "li": [
+      "Please fill in all the details and register yourself for kainkaryams coordinated by our Mutt.",
+      "Use another form and enter again for another person of your family."
+    ],
+    "sub_heading": "For any questions/comments about this form, please contact :",
+    "email": "vanamamalai.mutt@gmail.com ",
+    "phone": ["9677035530", "9500086417"],
+    "website": "https://vanamamalai.us",
+    "note": "Please note: ",
+    "star_li": [
+      "Some kainkaryams require the person to have undergone Samasrayanam.",
+      "Some kainkaryams require the person to have undergone Samasrayanam and Granthanvayam."
+    ]
+  },
+  "questions_content": [
+    { "heading": "Name", "required": true, "answer": "", "type": "text" },
     {
-      "section_name": "Section 1",
-      "layout": "hero_section",
-      "status": true,
-      "id": 1,
-      "section_data": [
-        {
-          "id": 4,
-          "content": "media/img/2.png",
-          "type": "image",
-          "section_data_status": true
-        },
-        {
-          "id": 2,
-          "content": "media/img/hero_2.png",
-          "type": "image",
-          "section_data_status": true
-        }
+      "heading": "Age Group",
+      "required": true,
+      "answer": "",
+      "type": "select",
+      "select_options": [
+        "Less than 15",
+        "16 to 20",
+        "20 to 25",
+        "26 to 30",
+        "31 to 35",
+        "36 to 40",
+        "41 to 50",
+        "51 to 60",
+        "Above 60"
       ]
     },
     {
-      "section_name": "Section 2",
-      "layout": "banner_section",
-      "status": true,
-      "id": 3,
-      "section_data": [
-        {
-          "id": 1,
-          "type": "image",
-          "content": "media/img/26_EN.jpg",
-          "content_data": [
-            { "id": "bcd1", "title": "Heading", "content": "" },
-            { "id": "bcd2", "title": "Brief Info", "content": "" }
-          ],
-          "status": true
-        },
-        {
-          "id": 2,
-          "type": "image",
-          "content": "",
-          "content_data": [
-            { "id": "bcd3", "title": "Heading", "content": "21st paasuram" },
-            {
-              "id": "bcd4",
-              "title": "Brief Info",
-              "content": "Vanamamalai mutt is an ancient srivaishnava mutt which was established by ponnadikkal jiyar under the orders of manavala mamunigal. Ponnadikkal jiyar was the first and foremost disciple and this mutt is one of the most important mutts of srivaishnava sath sampradhayam."
-            }
-          ],
-          "status": true
-        },
-        {
-          "id": 3,
-          "type": "image",
-          "content": "media/img/26_EN.jpg",
-          "content_data": [
-            { "id": "bcd5", "title": "Heading", "content": "" },
-            { "id": "bcd6", "title": "Brief Info", "content": "" }
-          ],
-          "status": true
-        },
-        {
-          "id": 4,
-          "type": "image",
-          "content": "media/img/26_EN.jpg",
-          "content_data": [
-            { "id": "bcd7", "title": "Heading", "content": "" },
-            { "id": "bcd8", "title": "Brief Info", "content": "" }
-          ],
-          "status": true
-        }
+      "heading": "Gender",
+      "required": true,
+      "answer": "",
+      "type": "select",
+      "radio_options": [
+        { "id": "s1", "value": "Male" },
+        { "id": "s2", "value": "Female" }
+      ],
+      "select_options": ["Male", "Female"]
+    },
+    {
+      "heading": "Contact number (WhatsApp preferred)",
+      "sub_heading": "Enter your primary contact number.",
+      "required": true,
+      "answer": "",
+      "type": "tel"
+    },
+    {
+      "heading": "Email ID",
+      "sub_heading": "Enter your email address",
+      "required": true,
+      "answer": "",
+      "type": "email"
+    },
+    {
+      "heading": "Samasrayanam done?",
+      "sub_heading": "Have you undergone pancha samskaram?",
+      "required": true,
+      "answer": "",
+      "type": "select",
+      "select_options": ["Yes", "No"]
+    },
+    {
+      "heading": "Native Place",
+      "required": false,
+      "answer": "",
+      "type": "select",
+      "select_options": [
+        "Vanamamalai / Nanguneri",
+        "Chennai - Triplicane",
+        "Chennai - Others",
+        "Madurai",
+        "Trichy",
+        "Srirangam",
+        "Kanchipuram",
+        "Hyderabad",
+        "United States",
+        "United Kingdom",
+        "Australia",
+        "Canada",
+        "France",
+        "Singapore",
+        "Japan",
+        "Perungulam",
+        "Thenthirupperai",
+        "Alwar Thirunagari",
+        "Vadakarai",
+        "Dusi-Mamandur",
+        "Mannargudi",
+        "Serangulam",
+        "Mannarkoil",
+        "Salem",
+        "Coimbatore",
+        "Athalanallur",
+        "Thirukkurungudi",
+        "Nathankoil",
+        "Secunderabad",
+        "Vijayawada",
+        "Bengaluru",
+        "Nepal",
+        "Uttar Pradesh",
+        "Orissa",
+        "New Delhi",
+        "Other"
       ]
     },
     {
-      "section_name": "Section 3",
-      "layout": "facebook_section",
-      "status": true,
-      "id": 4,
-      "section_data": [
-        {
-          "id": 1,
-          "title": "Facebook Page Link",
-          "content": "srivanamamalaimuttofficial",
-          "type": "text",
-          "section_data_status": true
-        }
+      "heading": "If other location where you preferred to do kainkaryam",
+      "sub_heading": "Do not enter anything if you have already chosen your preferred location, above.",
+      "required": false,
+      "answer": "",
+      "type": "text"
+    },
+    {
+      "heading": "Current Location",
+      "sub_heading": "Where are you currently residing?",
+      "required": false,
+      "answer": "",
+      "type": "select",
+      "select_options": [
+        "Vanamamalai / Nanguneri",
+        "Chennai - Triplicane",
+        "Chennai - Others",
+        "Madurai",
+        "Trichy",
+        "Srirangam",
+        "Kanchipuram",
+        "Hyderabad",
+        "United States",
+        "United Kingdom",
+        "Australia",
+        "Canada",
+        "France",
+        "Singapore",
+        "Japan",
+        "Perungulam",
+        "Thenthirupperai",
+        "Alwar Thirunagari",
+        "Vadakarai",
+        "Dusi-Mamandur",
+        "Mannargudi",
+        "Serangulam",
+        "Mannarkoil",
+        "Salem",
+        "Coimbatore",
+        "Athalanallur",
+        "Thirukkurungudi",
+        "Nathankoil",
+        "Secunderabad",
+        "Vijayawada",
+        "Bengaluru",
+        "Nepal",
+        "Uttar Pradesh",
+        "Orissa",
+        "New Delhi",
+        "Other"
       ]
     },
     {
-      "section_name": "Section 4",
-      "layout": "small_banner",
-      "status": true,
-      "id": 8,
-      "section_data": [
-        {
-          "id": "sb1",
-          "title": "Heading",
-          "content": "Lorem Ipsum",
-          "type": "text",
-          "section_data_status": true
-        },
-        {
-          "id": "sb2",
-          "title": "Brief Info",
-          "content": "lorem ipsum dolor sit amet",
-          "type": "text",
-          "section_data_status": true
-        },
-        {
-          "id": "sb3",
-          "title": "Cover Image",
-          "content": "media/img/vm_temple_banner.png",
-          "type": "image",
-          "section_data_status": true
-        }
-      ]
-    },
-    {
-      "section_name": "Section 5",
-      "layout": "card_section",
-      "status": true,
-      "id": 9,
-      "section_data": [
-        {
-          "card_id": 1,
-          "card_data": [
-            {
-              "id": "cs1",
-              "title": "Heading",
-              "content": "SVNB Sabha AGM - 2011",
-              "type": "text",
-              "section_data_status": true
-            },
-            {
-              "id": "cs2",
-              "title": "Brief Info",
-              "content": "The Annual General body meeting of our sabha will be held on Sunday 12th June 2011 by 4.00 p.m. at our Sabha premises Triplicane, under the presidenship of Thiru A.G. Gopalan, President.",
-              "type": "text",
-              "section_data_status": true
-            }
-          ]
-        },
-        {
-          "card_id": 2,
-          "card_data": [
-            {
-              "id": "cs3",
-              "title": "Heading",
-              "content": "About Kshetram",
-              "type": "text",
-              "section_data_status": true
-            },
-            {
-              "id": "cs4",
-              "title": "Brief Info",
-              "content": "The word kshetram itself is a wonderful sanskrit word. In his divine bhagavat geetha, geethacharyan says edam sareeram kowthEyA kshetram ethyabhidheeyathE",
-              "type": "text",
-              "section_data_status": true
-            }
-          ]
-        },
-        {
-          "card_id": 3,
-          "card_data": [
-            {
-              "id": "cs5",
-              "title": "Heading",
-              "content": "SVNB SabhaAGM - 2011",
-              "type": "text",
-              "section_data_status": true
-            },
-            {
-              "id": "cs6",
-              "title": "Brief Info",
-              "content": "The Annual General body meeting of our sabha will be held on Sunday 12th June 2011 by 4.00 p.m. at our Sabha premises Triplicane, under the presidenship of Thiru A.G. Gopalan, President.",
-              "type": "text",
-              "section_data_status": true
-            }
-          ]
-        },
-        {
-          "card_id": 4,
-          "card_data": [
-            {
-              "id": "cs7",
-              "title": "Heading",
-              "content": "SVNB SabhaAGM - 2011",
-              "type": "text",
-              "section_data_status": true
-            },
-            {
-              "id": "cs8",
-              "title": "Brief Info",
-              "content": "The Annual General body meeting of our sabha will be held on Sunday 12th June 2011 by 4.00 p.m. at our Sabha premises Triplicane, under the presidenship of Thiru A.G. Gopalan, President.",
-              "type": "text",
-              "section_data_status": true
-            }
-          ]
-        }
-      ]
+      "heading": "If other location where you residing in currently",
+      "sub_heading": "Do not enter anything if you have already chosen your current location, above.",
+      "required": false,
+      "answer": "",
+      "type": "text"
     }
   ]
 }

@@ -46,3 +46,8 @@ class suscribeModel(models.Model):
     city = models.TextField(blank=True)
     state = models.TextField(blank=True)
     country = models.TextField(blank=True)
+
+
+class shishyaForm(models.Model):
+    data = models.TextField()
+    
