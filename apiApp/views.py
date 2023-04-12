@@ -181,7 +181,7 @@ def jeeyars_parampara(request,format=None):
     res = {}
     res['title'] = "Jeeyar Paramapara"
     res['call_link'] = "jeeyars_details"
-    jeeyar = jeeyars.objects.filter(show_status = True).values('id','image','name','prefix','start_date','end_date','jeeyar_no','jeeyar_no_suffix')
+    jeeyar = jeeyars.objects.filter(show_status = True).values('id','image','name','prefix','start_date','end_date','jeeyar_no','jeeyar_no_suffix','link_status')
     res['jeeyars'] = jeeyar
     return Response(res)
 
@@ -190,72 +190,72 @@ def jeeyars_details(request,format=None):
     id = request.data['id']
     res = {}
     obj = jeeyars.objects.filter(id = id).values().last()
-    tab = jeeyars_tab.objects.filter(jeeyar_id = id,show_status = True).values()
-    banner = {
-                'heading': obj['banner_heading'],
-                'image': obj['banner_image'],
-             }
-    res['banner'] = banner
+    if obj['link_status']:
+        tab = jeeyars_tab.objects.filter(jeeyar_id = id,show_status = True).values()
+        banner = {
+                    'heading': obj['banner_heading'],
+                    'image': obj['banner_image'],
+                }
+        res['banner'] = banner
 
-    sub_title = obj['start_date']+" "+" to "+obj['end_date']+" "+obj['prefix']  if obj['end_date'] != "" else obj['start_date']+" "+obj['prefix']
-    content = {
-                'title': obj['name'],
-                'sub_title': sub_title ,
-                'image': obj['image'],
-                'jeeyar_no':str(obj['jeeyar_no'])+obj['jeeyar_no_suffix']
-              }
-    res['content'] = content
-    if len(tab) > 0:
-        tab_data = []
-        for i in tab:
-            tab_content = {}
-            tab_content['name'] = i['tab_heading']
-            tab_content['content'] = eval(i['tab_desc'])
+        sub_title = obj['start_date']+" "+" to "+obj['end_date']+" "+obj['prefix']  if obj['end_date'] != "" else obj['start_date']+" "+obj['prefix']
+        content = {
+                    'title': obj['name'],
+                    'sub_title': sub_title ,
+                    'image': obj['image'],
+                    'jeeyar_no':str(obj['jeeyar_no'])+obj['jeeyar_no_suffix']
+                }
+        res['content'] = content
+        if len(tab) > 0:
+            tab_data = []
+            for i in tab:
+                tab_content = {}
+                tab_content['name'] = i['tab_heading']
+                tab_content['content'] = eval(i['tab_desc'])
 
-            tab_data.append(tab_content)
-    else:
-        tab_data = [
-                        {
-                        "name": "About",
-                        "content": [
+                tab_data.append(tab_content)
+        else:
+            tab_data = [
                             {
-                            "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.",
-                            "type": "text"
+                            "name": "About",
+                            "content": [
+                                {
+                                "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.",
+                                "type": "text"
+                                }
+                            ]
+                            },
+                            {
+                            "name": "Place",
+                            "content": [
+                                {
+                                "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium. e ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.",
+                                "type": "text"
+                                }
+                            ]
+                            },
+                            {
+                            "name": "AchAryan/Sishya",
+                            "content": [
+                                {
+                                "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.",
+                                "type": "text"
+                                }
+                            ]
+                            },
+                            {
+                            "name": "Works",
+                            "content": [
+                                {
+                                "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit",
+                                "type": "text"
+                                }
+                            ]
                             }
                         ]
-                        },
-                        {
-                        "name": "Place",
-                        "content": [
-                            {
-                            "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium. e ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.",
-                            "type": "text"
-                            }
-                        ]
-                        },
-                        {
-                        "name": "AchAryan/Sishya",
-                        "content": [
-                            {
-                            "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium.",
-                            "type": "text"
-                            }
-                        ]
-                        },
-                        {
-                        "name": "Works",
-                        "content": [
-                            {
-                            "data": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit quasi illo praesentium. Sit nam non distinctio exercitationem, quaerat reiciendis illo molestias. Deleniti ipsum odit cum laudantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quo ipsam accusantium molestias nobis perspiciatis sapiente ipsa eveniet dolore cupiditate at adipisci non omnis expedita, qui error repudiandae magnam enim quisquam tempora reprehenderit",
-                            "type": "text"
-                            }
-                        ]
-                        }
-                    ]
 
-    res['tab_data'] = tab_data
-
-    return Response(res)
+        res['tab_data'] = tab_data
+        return Response(res)
 
 @api_view(['POST'])
 def other_temple(request,format=None):

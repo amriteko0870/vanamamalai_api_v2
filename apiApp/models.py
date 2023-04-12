@@ -131,6 +131,7 @@ class jeeyars(models.Model):
     banner_image = models.TextField(blank=True)
     banner_heading = models.TextField(blank=True)
     show_status = models.BooleanField()
+    link_status = models.BooleanField(default=False)
 
 
 class jeeyars_tab(models.Model):
